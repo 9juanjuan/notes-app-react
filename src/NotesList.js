@@ -9,7 +9,7 @@ function NotesListItem({id,text, handleClick}) {
                 onClick={(e)=> {
                     e.preventDefault();
                     console.log('you clicked');
-                    handleClick();
+                    handleClick(id);
                 }}
             >
                 {text} 
@@ -19,7 +19,7 @@ function NotesListItem({id,text, handleClick}) {
 }
 
 export default function NotesList({notes, className, handleSelection}) {
-    const items = notes.map(note => <NotesListItem id={note.id} text={note.title} handleClick={handleSelection}/>);
+    const items = notes.map(note => <NotesListItem id={note.id} text={note.title} handleClick={handleSelection} />);
     return (
         <ul className={`${styles.list} ${className}`}>
            {items}
