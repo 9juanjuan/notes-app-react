@@ -1,6 +1,7 @@
 import React from 'react'
 import NotesList from './NotesList'
 import NotesDetail from './NotesDetail'
+import styles from './NotesApp.module.css'
 
 export default class NotesApp extends React.Component {
     constructor (props) {
@@ -11,10 +12,11 @@ export default class NotesApp extends React.Component {
     }
     render() {
         return (
-            <div>
-                <NotesList /> 
-                <NotesDetail />
-            </div>
+                <div className ={styles.app}>
+                    <NotesList className={styles.list}/> 
+                    <NotesDetail className={styles.detail} />
+                </div> 
+          
         );
     }
 }
