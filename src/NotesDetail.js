@@ -1,12 +1,20 @@
 import React from 'react' 
 
 
-export default function NotesDetail({className, note}) {
-    return (
-        <div className={className}>
-            {note.text}
-        </div>
-    );
-
+export default class NotesDetail extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {  // Render does not receive props
+        // Declares the className and note variables 
+        // and assigns them to the properties from this.props
+        // where the name matches
+        const {className, note} = this.props; 
+        return (
+            <div className={className}>
+                {note.text}
+            </div>
+        );
+    }
 }
 
