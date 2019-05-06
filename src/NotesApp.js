@@ -7,15 +7,33 @@ export default class NotesApp extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
-            notes: []   // This will hold an array of objects
+            notes: [
+                {
+                    id: '1001',
+                    title: 'first note',
+                    text: 'this is the first note'
+                },
+                {
+                    id: '1002',
+                    title: 'second note',
+                    text: 'yonder, it is the second note'
+                },
+                {
+                    id: '1003',
+                    title: 'third note',
+                    text: 'imagine the poop emojis here.'
+                }
+            ]   // This will hold an array of objects
         }
     }
     render() {
         return (
-                <div className ={styles.app}>
-                    <NotesList className={styles.list}/> 
-                    <NotesDetail className={styles.detail} />
-                </div> 
+            <div className ={styles.app}>
+                <NotesList 
+                    className={styles.list}
+                    notes={this.state.notes}/> 
+                <NotesDetail className={styles.detail} />
+            </div> 
           
         );
     }
